@@ -1,3 +1,31 @@
+import bootstrap from "bootstrap";
+
+import $ from "jquery";
+
+import Popper from "popper.js";
+
+var modal = document.getElementById("jq-modal");
+
+var span = document.getElementsByClassName("jq-close")[0];
+
+$("#openModal").click(function () {
+    modal.style.display = "block";
+});
+
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+$("#openModal").click(function () {
+    $("#jq-modal").css("display", "block");
+});
+
 $(document).ready(function Slider() {
     let currentSlide = 0;
     let slides = $('.png-slide');
@@ -42,33 +70,3 @@ $('.carousel').on('slide.bs.carousel', function (e) {
     $prev.css('display', e.to === 0 ? 'none' : 'flex');
     $next.css('display', e.to === $(this).find('.carousel-item').length - 1 ? 'none' : 'flex');
 })
-
-
-
-import bootstrap from "bootstrap";
-
-import $ from "jquery";
-
-import Popper from "popper.js";
-
-var modal = document.getElementById("jq-modal");
-
-var span = document.getElementsByClassName("jq-close")[0];
-
-$("#openModal").click(function () {
-    modal.style.display = "block";
-});
-
-span.onclick = function () {
-    modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
-
-$("#openModal").click(function () {
-    $("#jq-modal").css("display", "block");
-});
